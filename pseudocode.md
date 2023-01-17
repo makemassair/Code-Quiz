@@ -72,10 +72,10 @@ To Dos:
 ~~15. Call this timer function in the start quiz function so that once user clicks startQuiz button the timer begins.~~
 ~~16. In your questions.js file, declare a variable for an array of objects holding all questions, choices and answers for your quiz.~~
 ~~17. Declare a function to render questions. ~~
-18. Declare a global variable to store index of questions. Initialize it to zero.
-19. In your questions function, initialize a variable to hold your questions' array of object from the questions.js file.
-20. Update question-title with current question.
-21. Clear out any old question choices from your choices div.
+~~18. Declare a global variable to store index of questions. Initialize it to zero.~~
+~~19. In your questions function, initialize a variable to hold your questions' array of object from the questions.js file.~~
+~~20. Update question-title with current question.~~
+~~21. Clear out any old question choices from your choices div.~~
 22. Loop over question object choices.
 23. Create new button for each choice dynamically using the DOM (createElement).
 24. Attach click event listener to each choice

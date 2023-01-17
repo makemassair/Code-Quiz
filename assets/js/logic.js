@@ -40,7 +40,6 @@ function endGame() {
 
 // convert questionsToAsk object to array
 const questionContent = Object.values(questionsToAsk);
-// console.log(questionContent);
 
 // Declare a function to start the Quiz
 beginQuiz.addEventListener("click", function() {
@@ -51,24 +50,53 @@ beginQuiz.addEventListener("click", function() {
     timerCount();
 });
 
+
+
+
+
 // function showQuestion() {
-//     activeQuestion = Object.entries(questionsToAsk);
-// }
+//    activeQuestion = questionContent[i].objArray
+//  }
+//  console.log(questionsToAsk.answerCorrect);
 
 //  Declare a function to render questions.
 function printQ() {
+    // Clear choices from any previous question
+    function empty(questionChoices) {
+        questionChoices.textContent = "";
+    };
+    let parent = document.querySelector("#choice");
+    // Print question title
     questionTitle.textContent = questionContent[0].question;
+    // Loop over question object choices.
     for (let i = 1; i < questionContent.length; i++) {
-        btnChoice = document.createElement("button");
-        if(questionContent[i] === "answerCorrect") {
-            btnChoice.setAttribute("data-set", "correct");
-        }
-        else {
-            btnChoice.setAttribute("data-set", "wrong");
-        };
-        btnChoice.setAttribute("class", "answerBtn");
-        document.body.children[2].children[1].children[1].appendChild(btnChoice);
-        btnChoice.textContent = i + ". " + questionContent[i].answer;
-        console.log(btnChoice);
+       buttonChoice = document.createElement("button");
+       if(questionContent[i].answerCorrect) {
+        buttonChoice.setAttribute("data-set", "correct");
+       }    
+       else {
+        buttonChoice.setAttribute("data-set", "wrong");
+       }   
+       buttonChoice.setAttribute("class", "answerButton");
+       document.body.children[2].children[1].children[1].appendChild(buttonChoice);
+       buttonChoice.textContent = i + ". " + questionContent[i][0];
+        console.log(buttonChoice);
     }
 };
+
+
+
+   
+    // for (let i = 1; i < questionContent.length; i++) {
+    //     btnChoice = document.createElement("button");
+    //     if(questionContent[0].answerCorrect === "answerCorrect") {
+    //         btnChoice.setAttribute("data-set", "correct");
+    //     }
+    //     else {
+    //         btnChoice.setAttribute("data-set", "wrong");
+    //     };
+    //     btnChoice.setAttribute("class", "answerBtn");
+    //     document.body.children[2].children[1].children[1].appendChild(btnChoice);
+    //     btnChoice.textContent = i + ". " + questionContent[i][0];
+    //     console.log(btnChoice);
+    // }

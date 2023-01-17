@@ -55,9 +55,8 @@ beginQuiz.addEventListener("click", function() {
 //     activeQuestion = Object.entries(questionsToAsk);
 // }
 
-// display the first question
+//  Declare a function to render questions.
 function printQ() {
-    
     questionTitle.textContent = questionContent[0].question;
     for (let i = 1; i < questionContent.length; i++) {
         btnChoice = document.createElement("button");

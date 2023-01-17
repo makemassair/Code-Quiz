@@ -71,7 +71,7 @@ To Dos:
 ~~14. Declare a function to start the timer and use the setInterval method to decrement total time.~~
 ~~15. Call this timer function in the start quiz function so that once user clicks startQuiz button the timer begins.~~
 ~~16. In your questions.js file, declare a variable for an array of objects holding all questions, choices and answers for your quiz.~~
-17. Declare a function to render questions. 
+~~17. Declare a function to render questions. ~~
 18. Declare a global variable to store index of questions. Initialize it to zero.
 19. In your questions function, initialize a variable to hold your questions' array of object from the questions.js file.
 20. Update question-title with current question.

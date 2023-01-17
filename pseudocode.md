@@ -52,25 +52,25 @@ To Dos:
 ** Folder Structure**
 ​
 ~~1. Create new repo in Github - clone onto computer.~~
-2. Copy over starter code inside the starter folder and commit to github.
-3. Create JS folder inside of the assets folder.
-4. Create 3 JS files --> (1) logic.js, (2) questions.js, (3) scores.js
-5. In your index.html link the logic.js and questions.js files using </script> tag
-6. In your highscores.html link the scores.js file using </script> tag
+~~2. Copy over starter code inside the starter folder and commit to github.~~
+~~3. Create JS folder inside of the assets folder.~~
+~~4. Create 3 JS files --> (1) logic.js, (2) questions.js, (3) scores.js~~
+~~5. In your index.html link the logic.js and questions.js files using </script> tag~~
+~~6. In your highscores.html link the scores.js file using </script> tag~~
 ​
 ​
 *** Start button that when clicked a timer starts and the first question appears**
 ​
-7. Grab the StartQuiz button using .getElementById or querySelector methods and store in a global variable. Do the same for all elements from the html page that you'll need to reference later on. For example the questions div etc.
-8. Declare a function to start the Quiz
-9. Add an eventListener to the start button - click event and pass the function that starts the quiz into your eventListener. 
-10. In your function that starts the quiz, grab the start-screen div using getElementById and store in a variable.
-11. Set attribute to this variable so that you change the class from start to hide (which is a class in the css file that displays none)
-12. In the start function, un-hide the questions div using remove attribute method.
-13. Declare and initialize a global variable to store total length of time.
-14. Declare a function to start the timer and use the setInterval method to decrement total time.
-15. Call this timer function in the start quiz function so that once user clicks startQuiz button the timer begins.
-16. In your questions.js file, declare a variable for an array of objects holding all questions, choices and answers for your quiz. 
+~~7. Grab the StartQuiz button using .getElementById or querySelector methods and store in a global variable. Do the same for all elements from the html page that you'll need to reference later on. For example the questions div etc.~~
+~~8. Declare a function to start the Quiz~~
+~~9. Add an eventListener to the start button - click event and pass the function that starts the quiz into your eventListener. ~~
+~~10. In your function that starts the quiz, grab the start-screen div using getElementById and store in a variable.~~
+~~11. Set attribute to this variable so that you change the class from start to hide (which is a class in the css file that displays none)~~
+~~12. In the start function, un-hide the questions div using remove attribute method.~~
+~~13. Declare and initialize a global variable to store total length of time.~~
+~~14. Declare a function to start the timer and use the setInterval method to decrement total time.~~
+~~15. Call this timer function in the start quiz function so that once user clicks startQuiz button the timer begins.~~
+~~16. In your questions.js file, declare a variable for an array of objects holding all questions, choices and answers for your quiz.~~
 17. Declare a function to render questions. 
 18. Declare a global variable to store index of questions. Initialize it to zero.
 19. In your questions function, initialize a variable to hold your questions' array of object from the questions.js file.

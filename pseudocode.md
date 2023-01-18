@@ -51,7 +51,7 @@ To Dos:
 ​
 ** Folder Structure**
 ​
-~~1. Create new repo in Github - clone onto computer.~~
+~~1. Create new repo in Github - clone onto computer.
 ~~2. Copy over starter code inside the starter folder and commit to github.~~
 ~~3. Create JS folder inside of the assets folder.~~
 ~~4. Create 3 JS files --> (1) logic.js, (2) questions.js, (3) scores.js~~
@@ -76,10 +76,10 @@ To Dos:
 ~~19. In your questions function, initialize a variable to hold your questions' array of object from the questions.js file.~~
 ~~20. Update question-title with current question.~~
 ~~21. Clear out any old question choices from your choices div.~~
-22. Loop over question object choices.
-23. Create new button for each choice dynamically using the DOM (createElement).
-24. Attach click event listener to each choice
-25. Display questions and button options on the page dynamically using the DOM (appendChild).
+~~22. Loop over question object choices.~~
+~~23. Create new button for each choice dynamically using the DOM (createElement).~~
+~~24. Attach click event listener to each choice~~
+~~25. Display questions and button options on the page dynamically using the DOM (appendChild).~~
 ​
 *** When answer is clicked, the next question appears. If the answer clicked was incorrect then subtract time from the clock**
 ​

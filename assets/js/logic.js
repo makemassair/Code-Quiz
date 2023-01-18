@@ -2,7 +2,7 @@ const beginQuiz = document.querySelector(".start");
 const quizIntro = document.querySelector("#start-screen");
 const question = document.querySelector("#questions");
 const questionTitle = document.querySelector("#question-title");
-const questionChoices = document.querySelector("#choice");
+const questionChoices = document.querySelector("#choices");
 const timer = document.querySelector(".timer");
 const timerCountdown = document.querySelector("#time");
 const endQuiz = document.querySelector("#end-screen");
@@ -12,7 +12,9 @@ const confirmName = document.querySelector("#submit");
 const quizFeedback = document.querySelector("#feedback");
 
 // Declared Variables
-activeQuestion = [];
+var activeQuestion;
+var answerButton;
+var questionIndex = 0;
 totalPlayTime = questionsToAsk.length * 10 + 1;
 
 // Time Countdown
@@ -36,67 +38,45 @@ function endGame() {
     question.setAttribute("class", "hide");
     endQuiz.removeAttribute("class", "hide");
 }
-  
-
-// convert questionsToAsk object to array
-const questionContent = Object.values(questionsToAsk);
 
 // Declare a function to start the Quiz
 beginQuiz.addEventListener("click", function() {
     console.log(`The "start button" has been clicked`);
     quizIntro.setAttribute("class", "hide");
     question.removeAttribute("class", "hide");
-    printQ();
     timerCount();
+    printQ();
+    scoring();
 });
 
-
-
-
-
-// function showQuestion() {
-//    activeQuestion = questionContent[i].objArray
-//  }
-//  console.log(questionsToAsk.answerCorrect);
+questionChoices.addEventListener("click", function(event) {
+    var button = event.target;
+    console.log(button);
+});
 
 //  Declare a function to render questions.
 function printQ() {
     // Clear choices from any previous question
-    function empty(questionChoices) {
-        questionChoices.textContent = "";
-    };
-    let parent = document.querySelector("#choice");
-    // Print question title
-    questionTitle.textContent = questionContent[0].question;
-    // Loop over question object choices.
-    for (let i = 1; i < questionContent.length; i++) {
-       buttonChoice = document.createElement("button");
-       if(questionContent[i].answerCorrect) {
-        buttonChoice.setAttribute("data-set", "correct");
-       }    
-       else {
-        buttonChoice.setAttribute("data-set", "wrong");
-       }   
-       buttonChoice.setAttribute("class", "answerButton");
-       document.body.children[2].children[1].children[1].appendChild(buttonChoice);
-       buttonChoice.textContent = i + ". " + questionContent[i][0];
-        console.log(buttonChoice);
+    questionChoices.textContent = "";
+    activeQuestion = questionsToAsk[questionIndex];
+    questionTitle.textContent = activeQuestion.question;
+    for (let i = 0; i < activeQuestion.choices.length; i++) {
+        var buttonChoice = document.createElement("button");
+        buttonChoice.setAttribute("class", "answerButton");
+        buttonChoice.textContent = i + ". " + activeQuestion.choices[i];
+        buttonChoice.dataset.isCorrect = i === activeQuestion.answer;
+        questionChoices.appendChild(buttonChoice);
     }
 };
 
 
-
-   
-    // for (let i = 1; i < questionContent.length; i++) {
-    //     btnChoice = document.createElement("button");
-    //     if(questionContent[0].answerCorrect === "answerCorrect") {
-    //         btnChoice.setAttribute("data-set", "correct");
-    //     }
-    //     else {
-    //         btnChoice.setAttribute("data-set", "wrong");
-    //     };
-    //     btnChoice.setAttribute("class", "answerBtn");
-    //     document.body.children[2].children[1].children[1].appendChild(btnChoice);
-    //     btnChoice.textContent = i + ". " + questionContent[i][0];
-    //     console.log(btnChoice);
-    // }
+function scoring() {
+    if (document.querySelector("button") === false) {
+        timerInterval - 5000;
+            console.log(questionChoices);
+    }
+    else {
+        printQ();
+    }
+    
+};

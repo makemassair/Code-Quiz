@@ -71,12 +71,12 @@ function printQ() {
 
 
 function scoring() {
-    if (document.querySelector("button") === false) {
-        timerInterval - 5000;
-            console.log(questionChoices);
+    if (document.querySelectorAll("button", "data-is-correct") == false) {
+        totalPlayTime-- *5;
     }
     else {
         printQ();
     }
+    console.log(totalPlayTime);
     
 };

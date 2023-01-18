@@ -71,7 +71,7 @@ function printQ() {
 
 
 function scoring() {
-    if (document.querySelectorAll("button", "data-is-correct") == false) {
+    if (document.querySelectorAll("[data-is-correct='false'")) {
         totalPlayTime-- *5;
     }
     else {

@@ -11,8 +11,8 @@ const questionsToAsk = [
     },
     {
         question: "Which of the following is not a JavaScript data type?",
-        choices: ["Null type", "Undefined type", "All of the above", "Number type"],
-        answer: 2
+        choices: ["Null type", "Undefined type", "Number type", "All of the above"],
+        answer: 3
     },
     {
         question: "Which of the following objects is the main entry point to all client-side JavaScript features and APIs?",

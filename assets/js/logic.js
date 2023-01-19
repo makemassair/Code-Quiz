@@ -10,6 +10,8 @@ const finalScore = document.querySelector("#final-score");
 const playerName = document.querySelector("#initials");
 const confirmName = document.querySelector("#submit");
 const quizFeedback = document.querySelector("#feedback");
+const audioCorrect = new Audio('assets/sfx/correct.wav');
+const audioWrong = new Audio('assets/sfx/incorrect.wav');
 
 // Declared Variables
 var activeQuestion;
@@ -37,7 +39,6 @@ function timerCount() {
     timerInterval = setInterval(function() {
         totalPlayTime--;
         timerCountdown.textContent = totalPlayTime;
-  
         if(totalPlayTime <= 0) {
         // Calls function to create and append image
         endGame();
@@ -51,6 +52,7 @@ function endGame() {
     timerCountdown.textContent = "~";
     question.setAttribute("class", "hide");
     endQuiz.removeAttribute("class", "hide");
+    quizFeedback.setAttribute("class", "hide");
     finalScore.innerText = currentScore;
 };
 
@@ -78,7 +80,7 @@ function printQ() {
     }
     questionIndex++;
 };
-
+// Scoring
 function scoring(button) {
     var score = button.dataset.isCorrect;
     if (score == "false") {
@@ -88,9 +90,20 @@ function scoring(button) {
     else {
         currentScore++;
         }
+    quizFeedback.removeAttribute("class", "hide");
+    var questionFeedback = button.dataset.isCorrect;
+    if (questionFeedback == 'false') {
+        playAudio(audioWrong);
+        quizFeedback.textContent = "Sorry, that's wrong"
+    }
+    else {
+        playAudio(audioCorrect);
+        quizFeedback.textContent = "Correct. Well done!"
+    }
     printQ();
 };
 
+// Adding Player Score and Initials to localStorage
 confirmName.addEventListener("click", function() {
     var initials = playerName.value;
     var highScores = JSON.parse(localStorage.getItem('playerScore'));
@@ -102,4 +115,9 @@ confirmName.addEventListener("click", function() {
     quizIntro.removeAttribute("class", "hide");
     endQuiz.setAttribute("class", "hide");
 });
+
+// Audio
+function playAudio(x) {
+  x.play();
+}
 

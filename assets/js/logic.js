@@ -10,6 +10,7 @@ const finalScore = document.querySelector("#final-score");
 const playerName = document.querySelector("#initials");
 const confirmName = document.querySelector("#submit");
 const quizFeedback = document.querySelector("#feedback");
+const displayScores = document.querySelector("#highscores");
 
 // Declared Variables
 var activeQuestion;
@@ -98,3 +99,4 @@ confirmName.addEventListener("click", function() {
     quizIntro.removeAttribute("class", "hide");
     endQuiz.setAttribute("class", "hide");
 });
+

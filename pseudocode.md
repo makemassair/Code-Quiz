@@ -83,24 +83,24 @@ To Dos:
 ​
 *** When answer is clicked, the next question appears. If the answer clicked was incorrect then subtract time from the clock**
 ​
-26. Validate question choices.
-27. If user guessed wrong penalize by decrementing timer. 
-28. Display new time on page dynamically (textContent)
-29. Move onto the next question once user click a button.
-30. Also check if we've run out of questions - if so end quiz or else get next question.  
+~~26. Validate question choices.~~
+~~27. If user guessed wrong penalize by decrementing timer. ~~
+~~28. Display new time on page dynamically (textContent)~~
+~~29. Move onto the next question once user click a button.~~
+~~30. Also check if we've run out of questions - if so end quiz or else get next question.  ~~
 ​
 *** When the game ends, it should display their score**
 ​
-31. Declare a function to end the quiz.
-32. When quiz ends stop the timer by using clearInterval method.
-33. Display the "end-screen" div by getting this element from the html dynamically.
-34. Then remove the hide attribute so it appears on page.
-35. Show final score by getting "final-score" element from html and then set end time as final score. 
-36. Hide questions section by setting the attribute back to hide.
+~~31. Declare a function to end the quiz.~~
+~~32. When quiz ends stop the timer by using clearInterval method.~~
+~~33. Display the "end-screen" div by getting this element from the html dynamically.~~
+~~34. Then remove the hide attribute so it appears on page.~~
+~~35. Show final score by getting "final-score" element from html and then set end time as final score. ~~
+~~36. Hide questions section by setting the attribute back to hide.~~
 ​
 *** Give the user the ability to save their initials and their score**
-37. Get value of input box
-38. Make sure value wasn't empty
+~~37. Get value of input box~~
+~~38. Make sure value wasn't empty~~
 39. Get saved scores from localstorage, or if there isn't any, set to empty array
 40. Declare new variable for a new score object for the current user. Object to have two properties (one for the score and one for the initials)
 41. Save to localstorage

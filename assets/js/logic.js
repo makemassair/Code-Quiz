@@ -10,7 +10,6 @@ const finalScore = document.querySelector("#final-score");
 const playerName = document.querySelector("#initials");
 const confirmName = document.querySelector("#submit");
 const quizFeedback = document.querySelector("#feedback");
-const displayScores = document.querySelector("#highscores");
 
 // Declared Variables
 var activeQuestion;
@@ -18,7 +17,19 @@ var answerButton;
 var timerInterval;
 var questionIndex = 0;
 var currentScore = 0;
-totalPlayTime = questionsToAsk.length * 10 + 1;
+var totalPlayTime;
+
+// Declare a function to start the Quiz
+beginQuiz.addEventListener("click", function() {
+    console.log(`The "start button" has been clicked`);
+    totalPlayTime = questionsToAsk.length * 10 + 1;
+    currentScore = 0;
+    questionIndex = 0;
+    quizIntro.setAttribute("class", "hide");
+    question.removeAttribute("class", "hide");
+    timerCount();
+    printQ();
+});
 
 // Time Countdown
 function timerCount() {
@@ -34,22 +45,14 @@ function timerCount() {
     }, 1000);
   };
 
+// End the quiz
 function endGame() {
     clearInterval(timerInterval);
+    timerCountdown.textContent = "~";
     question.setAttribute("class", "hide");
     endQuiz.removeAttribute("class", "hide");
-    finalScore.innerText = currentScore;}
-
-// Declare a function to start the Quiz
-beginQuiz.addEventListener("click", function() {
-    console.log(`The "start button" has been clicked`);
-    currentScore = 0;
-    questionIndex = 0;
-    quizIntro.setAttribute("class", "hide");
-    question.removeAttribute("class", "hide");
-    timerCount();
-    printQ();
-});
+    finalScore.innerText = currentScore;
+};
 
 questionChoices.addEventListener("click", function(event) {
     var button = event.target;
@@ -89,7 +92,7 @@ function scoring(button) {
 };
 
 confirmName.addEventListener("click", function() {
-    var initials = playerName.textContent;
+    var initials = playerName.value;
     var highScores = JSON.parse(localStorage.getItem('playerScore'));
     if (highScores === null) {
         highScores = [];

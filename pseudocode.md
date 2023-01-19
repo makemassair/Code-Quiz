@@ -101,9 +101,9 @@ To Dos:
 *** Give the user the ability to save their initials and their score**
 ~~37. Get value of input box~~
 ~~38. Make sure value wasn't empty~~
-39. Get saved scores from localstorage, or if there isn't any, set to empty array
-40. Declare new variable for a new score object for the current user. Object to have two properties (one for the score and one for the initials)
-41. Save to localstorage
+~~39. Get saved scores from localstorage, or if there isn't any, set to empty array~~
+~~40. Declare new variable for a new score object for the current user. Object to have two properties (one for the score and one for the initials)~~
+~~41. Save to localstorage~~
 42. Redirect to highscore.html page.
 43. In your scores.js file, create a function display the high scores. 
 44. either get scores from localstorage or set to empty array

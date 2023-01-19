@@ -1,21 +1,35 @@
 // Retrieve from localStorage
+const displayScores = document.querySelector("#highscores");
 function getScores() {
     // let playersName = window.localStorage.getItem('initials');
-    JSON.parse(window.localStorage.getItem('playerScore'));
-}
-console.log(JSON.parse(window.localStorage.getItem('playerScore')));
-
-function displayTheScores() {
-    displayScores.textContent = "";
-    scoresIndex === getScores.length;
-    playerScoreDisplay = getScores[scoresIndex]
-    displayScores.textContent = playerScoreDisplay;
-    for (let i = 0; i < playerScoreDisplay.length; i++) {
-        var playerScore = document.createElement("li");
-        playerScore.textContent = playerScoreDisplay[i];
-        displayScores.appendChild(playerScore);
+    if (displayOfScores == null) {
+        displayOfScores = [];
     }
-    playerScoreDisplay++;
+    var displayOfScores = JSON.parse(window.localStorage.getItem('playerScore'));
+    displayOfScores.sort(function(a, b){
+        return b.finalScore - a.finalScore;
+    });
+    displayOfScores.forEach(function(score) {
+        var listItem = document.createElement("li");
+        listItem.textContent = score.initials + " - " + score.finalScore;
+        displayScores.appendChild(listItem);
+    });
 };
-console.log(displayTheScores);
-// displayTheScore = getScores  
+
+getScores();
+
+// clear HighScores
+// listen for button click
+// on click wipe window.localStorage
+const clearButton = document.querySelector("#clear");
+
+// function scorePurge() {
+//     clearButton.onclick = localStorage.clear();
+// };
+// console.log(clearButton);
+
+clearButton.addEventListener("click", () => {
+    window.localStorage.clear("playerScore");
+    displayScores.textContent = "";
+    alert("High Scores have been erased.");
+});

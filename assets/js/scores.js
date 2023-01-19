@@ -1,0 +1,6 @@
+var scoringSystem = [
+    {
+        initials:
+        finalScore:
+    }
+]
